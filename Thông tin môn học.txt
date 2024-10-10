@@ -8,3 +8,5 @@ TS. Đào Thị Thúy Quỳnh
 10% BTL (BTL về các thuật toán XLA Mỗi nhóm 1-3 người, gần cuối kỳ sẽ báo cáo)
 
 70%  thi Tự Luận  
+
+- làm mấy bài toán tổng quát 

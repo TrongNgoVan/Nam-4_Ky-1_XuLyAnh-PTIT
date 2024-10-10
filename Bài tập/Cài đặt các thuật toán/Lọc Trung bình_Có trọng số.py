@@ -20,7 +20,7 @@ def weighted_average_filter(image_array, kernel):
     return result
 
 
-img = Image.open('input/weighted_average_filter.jpg').convert('L')
+img = Image.open('input/ảnh nvt.png').convert('L')
 img_array = np.array(img, dtype=np.float32)
 
 kernel = np.array([[1, 2, 1],
