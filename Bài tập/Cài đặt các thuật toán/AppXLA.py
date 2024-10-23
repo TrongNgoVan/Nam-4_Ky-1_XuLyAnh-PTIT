@@ -63,7 +63,7 @@ root.geometry("900x600")  # Kích thước cửa sổ chính
 root.configure(bg="#F0F0F0")
 
 # Tiêu đề ứng dụng
-title_label = Label(root, text="Xử lý ảnh - Ngọ Văn Trọng", font=("Arial", 24, "bold"), bg="#F0F0F0", fg="#333333")
+title_label = Label(root, text="Trực quan các thuật toán XLA - NVT", font=("Arial", 24, "bold"), bg="#F0F0F0", fg="#333333")
 title_label.grid(row=0, column=0, columnspan=2, pady=20)
 
 # Tạo các label để hiển thị ảnh

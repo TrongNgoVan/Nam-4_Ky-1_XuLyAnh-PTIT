@@ -18,8 +18,7 @@ def weighted_average_filter(image_array, kernel):
             result[i, j] = np.sum(region * kernel)
 
     return result
-
-
+    
 img = Image.open('input/ảnh nvt.png').convert('L')
 img_array = np.array(img, dtype=np.float32)
 
