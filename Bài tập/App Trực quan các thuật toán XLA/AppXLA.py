@@ -31,7 +31,7 @@ class ImageProcessingApp:
 
     def setup_gui(self):
         # Tiêu đề
-        title_label = Label(self.root, text="Trực quan các thuật toán XLA - NVT", 
+        title_label = Label(self.root, text="Trực quan các thuật toán XLA - Ngọ Văn Trọng", 
                           font=("Arial", 24, "bold"), bg="#F0F0F0", fg="#333333")
         title_label.grid(row=0, column=0, columnspan=3, pady=20)
 
@@ -61,10 +61,10 @@ class ImageProcessingApp:
             "Phép giãn (Dilation)": self.dilation_filter,
             "Phép co (Erosion)": self.erosion_filter,
             "Cân bằng histogram": self.histogram_equalization_filter,
-            "Mã hóa Huffman": self.huffman_encoding_filter,
+            # "Mã hóa Huffman": self.huffman_encoding_filter,
             "Lọc trung vị": self.median_filter,
             "Ảnh âm bản": self.negative_image_filter,
-            "Phép mở (Opening)": self.opening_filter,
+            # "Phép mở (Opening)": self.opening_filter,
             "Toán tử Prewitt": self.prewitt_operator_filter,
             "Toán tử Roberts": self.roberts_operator_filter,
             "Toán tử Sobel": self.sobel_operator_filter,
@@ -149,26 +149,26 @@ class ImageProcessingApp:
         result = cdf[img_array]
         self.display_result(result)
 
-    def huffman_encoding_filter(self):
-        # Chuyển ảnh thành bytes
-        img_byte_arr = io.BytesIO()
-        self.img.save(img_byte_arr, format=self.img.format)
-        image_data = img_byte_arr.getvalue()
+    # def huffman_encoding_filter(self):
+    #     # Chuyển ảnh thành bytes
+    #     img_byte_arr = io.BytesIO()
+    #     self.img.save(img_byte_arr, format=self.img.format)
+    #     image_data = img_byte_arr.getvalue()
         
-        # Mã hóa
-        encoded_data, tree = self.huffman_encode(image_data)
-        # Giải mã
-        decoded_data = self.huffman_decode(encoded_data, tree)
+    #     # Mã hóa
+    #     encoded_data, tree = self.huffman_encode(image_data)
+    #     # Giải mã
+    #     decoded_data = self.huffman_decode(encoded_data, tree)
         
-        # Chuyển về ảnh
-        bytes_io = io.BytesIO(decoded_data)
-        decoded_img = Image.open(bytes_io)
+    #     # Chuyển về ảnh
+    #     bytes_io = io.BytesIO(decoded_data)
+    #     decoded_img = Image.open(bytes_io)
         
-        # Hiển thị
-        img_tk = ImageTk.PhotoImage(decoded_img)
-        self.label_filtered.config(image=img_tk)
-        self.label_filtered.image = img_tk
-        self.label_filtered.photo = img_tk
+    #     # Hiển thị
+    #     img_tk = ImageTk.PhotoImage(decoded_img)
+    #     self.label_filtered.config(image=img_tk)
+    #     self.label_filtered.image = img_tk
+    #     self.label_filtered.photo = img_tk
 
     def median_filter(self):
         img_gray = self.img.convert('L')
